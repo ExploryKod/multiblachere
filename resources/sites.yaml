@@ -1,0 +1,8 @@
+groupe_blachere:
+  name: 'Groupe Blachère'
+  url: 'http://local.groupeblachere.com/'
+  locale: fr_FR
+marie_blachere:
+  name: 'Marie Blachère'
+  url: 'http://local.marieblachere.com/'
+  locale: fr_FR
