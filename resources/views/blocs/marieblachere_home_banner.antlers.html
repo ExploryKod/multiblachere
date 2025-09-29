@@ -1,0 +1,30 @@
+{{# Marie Blachère Home Banner - Simplified Template #}}
+<div class="et_pb_section et_pb_section_2 et_pb_with_background et_pb_inner_shadow et_pb_fullwidth_section et_section_regular">
+    
+    {{# Main Header Section #}}
+    <section id="header1" class="et_pb_module et_pb_fullwidth_header et_pb_fullwidth_header_1 title2 et_pb_text_align_center et_pb_bg_layout_light">
+        
+        <div class="et_pb_fullwidth_header_container center">
+            <div class="header-content-container center">
+                <div class="header-content">
+                    
+                    {{# Title #}}
+                    {{ if title }}
+                        <h1 class="banner-title">{{ title }}</h1>
+                    {{ /if }}
+                    
+                </div>
+            </div>
+        </div>
+        
+        {{# Background Overlay #}}
+        <div class="et_pb_fullwidth_header_overlay"></div>
+        
+        {{# Scroll Indicator #}}
+        <div class="et_pb_fullwidth_header_scroll"></div>
+    </section>
+    
+</div>
+
+{{# Include CSS file for additional styling #}}
+{{ asset:css src="css/marieblachere_banner.css" }}

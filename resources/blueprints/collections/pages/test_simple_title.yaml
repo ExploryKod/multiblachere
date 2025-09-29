@@ -1,0 +1,33 @@
+title: 'Test Simple Title Fieldtype'
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: simple_title
+              display: 'Simple Title'
+              required: true
+              default: 'My Default Title'
+              placeholder: 'Enter your title here...'
+              max_length: 100
+          -
+            handle: content
+            field:
+              type: markdown
+              display: Content
+              localizable: true
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'

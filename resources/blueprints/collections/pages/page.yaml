@@ -1,4 +1,4 @@
-title: Page
+title: Pages
 tabs:
   main:
     display: Main
@@ -33,6 +33,32 @@ tabs:
               type: template
               display: Template
               localizable: true
+          -
+            handle: sites_field
+            field:
+              type: sites
+              display: 'Sites Field'
+              localizable: false
+      -
+        display: 'Page Builder'
+        fields:
+          -
+            handle: page_builder
+            field:
+              type: replicator
+              display: 'Page builder'
+              localizable: true
+              if:
+                template: 'contains marieblachere'
+              sets:
+                blocs:
+                  display: Blocs
+                  sets:
+                    banners:
+                      display: Banners
+                      fields:
+                        -
+                          import: groupeblachere_home_banner
   sidebar:
     display: Sidebar
     sections:

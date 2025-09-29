@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7bc57f0a085c2ee0145bdaa150ca9dca",
+    "content-hash": "c1a0c7e511ebe467211e4a7526ad0ded",
     "packages": [
         {
             "name": "ajthinking/archetype",
@@ -68,6 +68,46 @@
                 "source": "https://github.com/ajthinking/archetype/tree/v2.0.0"
             },
             "time": "2024-05-11T08:05:58+00:00"
+        },
+        {
+            "name": "amaury/multisitesblocs",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "addons/amaury/multisitesblocs",
+                "reference": "055309e60b2e235ae72200cbbdf3e909c5f06ec9"
+            },
+            "require": {
+                "statamic/cms": "^5.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "statamic": {
+                    "name": "Multisitesblocs",
+                    "description": "Multisitesblocs addon"
+                },
+                "laravel": {
+                    "providers": [
+                        "Amaury\\Multisitesblocs\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Amaury\\Multisitesblocs\\": "src"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Amaury\\Multisitesblocs\\Tests\\": "tests"
+                }
+            },
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "brick/math",
@@ -516,6 +556,60 @@
                 }
             ],
             "time": "2024-02-05T11:56:58+00:00"
+        },
+        {
+            "name": "doefom/currency-fieldtype",
+            "version": "v1.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doefom/currency-fieldtype.git",
+                "reference": "768489995140b65d7527249df34e10928efe80cc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doefom/currency-fieldtype/zipball/768489995140b65d7527249df34e10928efe80cc",
+                "reference": "768489995140b65d7527249df34e10928efe80cc",
+                "shasum": ""
+            },
+            "require": {
+                "ext-intl": "*",
+                "php": "^8.1",
+                "statamic/cms": "^v4.0|^v5.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^8.5",
+                "phpunit/phpunit": "^10.2"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Doefom\\CurrencyFieldtype\\ServiceProvider"
+                    ]
+                },
+                "statamic": {
+                    "name": "Currency Fieldtype",
+                    "editions": [
+                        "free"
+                    ],
+                    "description": "Currency Fieldtype addon"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Doefom\\CurrencyFieldtype\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "proprietary"
+            ],
+            "description": "This Statamic addon provides a Currency fieldtype that lets you choose one of the most used currencies in the world and is especially suitable for fields like \"price\" or \"account_balance\" in any of your blueprints.",
+            "support": {
+                "issues": "https://github.com/doefom/currency-fieldtype/issues",
+                "source": "https://github.com/doefom/currency-fieldtype/tree/v1.4.1"
+            },
+            "time": "2024-08-19T04:47:52+00:00"
         },
         {
             "name": "dragonmantank/cron-expression",
@@ -10889,7 +10983,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {},
+    "stability-flags": {
+        "amaury/multisitesblocs": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

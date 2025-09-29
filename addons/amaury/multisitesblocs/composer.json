@@ -1,0 +1,37 @@
+{
+    "name": "amaury/multisitesblocs",
+    "autoload": {
+        "psr-4": {
+            "Amaury\\Multisitesblocs\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Amaury\\Multisitesblocs\\Tests\\": "tests"
+        }
+    },
+    "require": {
+        "statamic/cms": "^5.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^9.0"
+    },
+    "config": {
+        "allow-plugins": {
+            "pixelfear/composer-dist-plugin": true
+        }
+    },
+    "extra": {
+        "statamic": {
+            "name": "Multisitesblocs",
+            "description": "Multisitesblocs addon"
+        },
+        "laravel": {
+            "providers": [
+                "Amaury\\Multisitesblocs\\ServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

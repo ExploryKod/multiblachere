@@ -1,0 +1,17 @@
+title: 'Marie Blachère Home Banner'
+fields:
+  -
+    handle: title
+    field:
+      type: text
+      display: Title
+      default: 'La qualité, le choix, le service de professionnels'
+      localizable: true
+      validate:
+        - required
+  -
+    handle: revealer_field
+    field:
+      type: revealer
+      display: 'Revealer Field'
+      localizable: false

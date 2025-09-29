@@ -33,6 +33,13 @@ RUN docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp --with-x
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
+# Configure PHP for file uploads
+RUN echo "upload_max_filesize = 50M" >> /usr/local/etc/php/conf.d/uploads.ini \
+    && echo "post_max_size = 50M" >> /usr/local/etc/php/conf.d/uploads.ini \
+    && echo "memory_limit = 256M" >> /usr/local/etc/php/conf.d/uploads.ini \
+    && echo "max_execution_time = 300" >> /usr/local/etc/php/conf.d/uploads.ini \
+    && echo "max_input_time = 300" >> /usr/local/etc/php/conf.d/uploads.ini \
+    && echo "max_file_uploads = 20" >> /usr/local/etc/php/conf.d/uploads.ini
 
 # Set working directory
 WORKDIR /var/www/html

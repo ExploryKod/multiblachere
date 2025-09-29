@@ -1,0 +1,18 @@
+{{# Example: How to use blocks in your page templates #}}
+
+{{# Recommended Method: Using the blocs partial (handles everything automatically) #}}
+{{ if blocs }}
+    {{ partial:blocs }}
+{{ /if }}
+
+{{# Alternative: Direct dynamic partial loading #}}
+{{ blocs }}
+    {{ partial src="blocs/{type}" }}
+{{ /blocs }}
+
+{{# Debug: Show block information (remove in production) #}}
+{{ blocs }}
+    <div class="block-debug">
+        <p>Block type: {{ type }} | Index: {{ index }} | First: {{ first }} | Last: {{ last }}</p>
+    </div>
+{{ /blocs }}
