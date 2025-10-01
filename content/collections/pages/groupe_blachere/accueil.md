@@ -5,7 +5,7 @@ title: Accueil
 author: 5ba2dd02-bbe9-4823-a1c7-ff6423b64716
 template: marieblachere/default
 updated_by: 5ba2dd02-bbe9-4823-a1c7-ff6423b64716
-updated_at: 1759178190
+updated_at: 1759349008
 page_builder:
   -
     id: mg5kxax7

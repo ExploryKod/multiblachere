@@ -3,12 +3,11 @@
  * https://statamic.dev/extending/control-panel
  */
 
-/** Example Fieldtype
-
-import ExampleFieldtype from './components/fieldtypes/ExampleFieldtype.vue';
+import TogglePasswordFieldtype from './components/fieldtypes/TogglePassword.vue';
+import ReadOnlyTextFieldtype from './components/fieldtypes/ReadOnlyText.vue';
 
 Statamic.booting(() => {
-    Statamic.$components.register('example-fieldtype', ExampleFieldtype);
+    // Should be named [snake_case_handle]-fieldtype
+    Statamic.$components.register('toggle_password-fieldtype', TogglePasswordFieldtype);
+    Statamic.$components.register('read_only_text-fieldtype', ReadOnlyTextFieldtype);
 });
-
-*/
