@@ -33,12 +33,6 @@ tabs:
               type: template
               display: Template
               localizable: true
-          -
-            handle: sites_field
-            field:
-              type: sites
-              display: 'Sites Field'
-              localizable: false
       -
         display: 'Page Builder'
         fields:
@@ -59,6 +53,19 @@ tabs:
                       fields:
                         -
                           import: groupeblachere_home_banner
+          -
+            handle: marie_blachere_builder
+            field:
+              type: replicator
+              display: 'Marie Blachere Builder'
+              localizable: true
+              sets:
+                new_set_group:
+                  display: 'New Set Group'
+                  sets:
+                    new_set:
+                      display: 'New Set'
+                      fields: {  }
   sidebar:
     display: Sidebar
     sections:

@@ -1,4 +1,4 @@
-title: 'Marie Blachère Home Banner'
+title: 'Groupe Blachère Home Banner'
 fields:
   -
     handle: title
@@ -9,9 +9,3 @@ fields:
       localizable: true
       validate:
         - required
-  -
-    handle: revealer_field
-    field:
-      type: revealer
-      display: 'Revealer Field'
-      localizable: false

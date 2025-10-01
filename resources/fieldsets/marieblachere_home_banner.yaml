@@ -1,0 +1,8 @@
+title: 'Marie Blachère Home Banner'
+fields:
+  -
+    handle: title
+    field:
+      type: text
+      display: title
+      localizable: false
