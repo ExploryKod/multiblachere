@@ -1,8 +1,13 @@
 <template>
-    <div class="readonly-text-fieldtype" :class="fieldClasses">
-        <div class="readonly-text-content" v-html="formattedText"></div>
+    <div class="readonly-text-fieldtype">
+        <input 
+            type="text" 
+            :value="value" 
+            readonly 
+            class="input-text"
+            style="background-color: #f8f9fa; cursor: not-allowed;"
+        />
         <div class="readonly-text-hint" v-if="config.instructions">
-            <svg-icon name="information-circle" class="hint-icon" />
             <span>{{ config.instructions }}</span>
         </div>
     </div>
@@ -10,11 +15,11 @@
 
 <script>
 export default {
-    mixins: [Fieldtype],
-
+    props: ['value', 'config'],
+    
     computed: {
-        formattedText() {
-            const text = this.value || this.config.default_text || '';
+        displayText() {
+            const text = this.value || this.config.default_text || 'No text configured';
             const style = this.config.text_style || 'normal';
             
             switch (style) {
@@ -23,30 +28,23 @@ export default {
                 case 'bold':
                     return `<strong>${text}</strong>`;
                 case 'muted':
-                    return `<span class="text-muted">${text}</span>`;
+                    return `<span style="color: #6c757d;">${text}</span>`;
                 case 'success':
-                    return `<span class="text-success">${text}</span>`;
+                    return `<span style="color: #28a745;">${text}</span>`;
                 case 'warning':
-                    return `<span class="text-warning">${text}</span>`;
+                    return `<span style="color: #ffc107;">${text}</span>`;
                 case 'error':
-                    return `<span class="text-error">${text}</span>`;
+                    return `<span style="color: #dc3545;">${text}</span>`;
                 default:
                     return text;
             }
-        },
-
-        fieldClasses() {
-            return {
-                'has-border': this.config.show_border,
-                'has-hint': this.config.instructions,
-            };
         }
     },
 
     mounted() {
-        // Ensure the value is always set to the configured default text
-        // This prevents any user input from being saved
-        this.update(this.config.default_text || '');
+        if (this.config.default_text) {
+            this.$emit('input', this.config.default_text);
+        }
     }
 };
 </script>

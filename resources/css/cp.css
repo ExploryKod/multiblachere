@@ -1,1 +1,6 @@
 /* This is all you. */
+
+/* Extra safety: hide by handle via CSS when on a specific site */
+.site--marie_blachere .publish-field__marie_blachere_builder {
+    display: none !important;
+}

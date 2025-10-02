@@ -8,6 +8,8 @@ class ReadOnlyText extends Fieldtype
 {
     protected $icon = 'document-text';
     protected $categories = ['text'];
+    
+    protected static $handle = 'read_only_text';
 
     /**
      * The blank/default value.
@@ -27,7 +29,12 @@ class ReadOnlyText extends Fieldtype
      */
     public function preProcess($data)
     {
-        return $data ?: $this->config('default_text', '');
+        return $data ?: $this->getSiteHandle();
+    }
+
+    private function getSiteHandle()
+    {
+        return app('statamic.sites')->current()->handle();
     }
 
     /**

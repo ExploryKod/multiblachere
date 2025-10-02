@@ -1,38 +1,26 @@
 <template>
-    <div class="toggle-password-fieldtype">
-        <div class="input-group">
-            <text-input 
-                :value="value" 
-                @input="update" 
-                :type="showPassword ? 'text' : 'password'"
-                :placeholder="config.placeholder || 'Enter password'"
-            />
-            <button 
-                type="button" 
-                class="btn btn-sm btn-outline"
-                @click="togglePassword"
-                :title="showPassword ? 'Hide password' : 'Show password'"
-            >
-                <svg-icon :name="showPassword ? 'eye-off' : 'eye'" />
-            </button>
-        </div>
+    <div>
+        <input 
+            :type="show ? 'text' : 'password'" 
+            :value="value" 
+            @input="$emit('input', $event.target.value)"
+            :placeholder="config.placeholder || 'Enter password'"
+        />
+        <label>
+            <input type="checkbox" v-model="show" /> 
+            Show Password
+        </label>
     </div>
 </template>
 
 <script>
 export default {
-    mixins: [Fieldtype],
-
+    props: ['value', 'config'],
+    
     data() {
         return {
-            showPassword: false
+            show: false
         };
-    },
-
-    methods: {
-        togglePassword() {
-            this.showPassword = !this.showPassword;
-        }
     }
 };
 </script>

@@ -33,19 +33,6 @@ tabs:
               type: template
               display: Template
               localizable: true
-          -
-            handle: read_only_text_field
-            field:
-              default_text: marieblachere
-              type: read_only_text
-              display: 'Read Only Text Field'
-              localizable: false
-          -
-            handle: toggle_password_field
-            field:
-              type: toggle_password
-              display: 'Toggle Password Field'
-              localizable: false
       -
         display: 'Page Builder'
         fields:
@@ -55,8 +42,6 @@ tabs:
               type: replicator
               display: 'Page builder'
               localizable: true
-              if:
-                template: 'contains marieblachere'
               sets:
                 blocs:
                   display: Blocs
@@ -72,6 +57,7 @@ tabs:
               type: replicator
               display: 'Marie Blachere Builder'
               localizable: true
+              always_save: false
               sets:
                 new_set_group:
                   display: 'New Set Group'

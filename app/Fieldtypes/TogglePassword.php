@@ -8,6 +8,8 @@ class TogglePassword extends Fieldtype
 {
     protected $icon = 'lock';
     protected $categories = ['text'];
+    
+    protected static $handle = 'toggle_password';
 
     /**
      * The blank/default value.
