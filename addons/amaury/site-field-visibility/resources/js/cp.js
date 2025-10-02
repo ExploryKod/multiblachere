@@ -123,17 +123,44 @@ Statamic.booting(() => {
         return cfg;
     };
 
-    const applyPerSiteHiding = (activeSite, retryCount = 0) => {
+    const getSiteConfig = async (activeSite) => {
+        try {
+            const response = await fetch('/cp/field-visibility/config/' + activeSite);
+            if (response.ok) {
+                return await response.json();
+            }
+        } catch (e) {
+            console.log('[SiteFieldVisibility] Could not fetch config for', activeSite, e);
+        }
+        
+        // Fallback to default config
+        return {
+            hidden_fields: activeSite === 'groupe_blachere' ? ['marie_blachere_builder'] : [],
+            visible_fields: activeSite === 'marie_blachere' ? ['marie_blachere_builder', 'page_builder'] : ['page_builder']
+        };
+    };
+
+    const applyPerSiteHiding = async (activeSite, retryCount = 0) => {
         setBodySiteClass(activeSite);
         let hiddenCount = 0;
         
-        if (activeSite === 'groupe_blachere') {
-            console.log('[SiteFieldVisibility] groupe_blachere -> hide marie_blachere_builder, keep page_builder visible');
-            hiddenCount += hideByHandle('marie_blachere_builder');
+        const config = await getSiteConfig(activeSite);
+        console.log('[SiteFieldVisibility] Config for', activeSite, ':', config);
+        
+        // Hide fields
+        if (config.hidden_fields && config.hidden_fields.length > 0) {
+            config.hidden_fields.forEach(fieldHandle => {
+                console.log('[SiteFieldVisibility] Hiding field:', fieldHandle);
+                hiddenCount += hideByHandle(fieldHandle);
+            });
         }
-        if (activeSite === 'marie_blachere') {
-            console.log('[SiteFieldVisibility] marie_blachere -> show marie_blachere_builder, keep page_builder visible');
-            showByHandle('marie_blachere_builder');
+        
+        // Show fields
+        if (config.visible_fields && config.visible_fields.length > 0) {
+            config.visible_fields.forEach(fieldHandle => {
+                console.log('[SiteFieldVisibility] Showing field:', fieldHandle);
+                showByHandle(fieldHandle);
+            });
         }
         
         // If no fields were hidden and we're in a publish form, retry after a delay
