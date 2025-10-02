@@ -12,6 +12,7 @@
     "require": {
         "php": "^8.2",
         "amaury/multisitesblocs": "*@dev",
+        "amaury/site-field-visibility": "*@dev",
         "doefom/currency-fieldtype": "^1.4",
         "laravel/framework": "^12.0",
         "laravel/tinker": "^2.10.1",
@@ -91,6 +92,10 @@
         {
             "type": "path",
             "url": "addons/amaury/multisitesblocs"
+        },
+        {
+            "type": "path",
+            "url": "addons/amaury/site-field-visibility"
         }
     ]
 }

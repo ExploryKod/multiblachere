@@ -1,0 +1,12 @@
+{
+    "name": "amaury/site-field-visibility",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "build": "vite build",
+        "dev": "vite build --watch"
+    },
+    "devDependencies": {
+        "vite": "^5.0.0"
+    }
+}

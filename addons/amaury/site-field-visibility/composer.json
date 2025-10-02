@@ -1,0 +1,31 @@
+{
+    "name": "amaury/site-field-visibility",
+    "description": "Hide/show fields based on active site in Statamic CP",
+    "autoload": {
+        "psr-4": {
+            "Amaury\\SiteFieldVisibility\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Amaury Franssen"
+        }
+    ],
+    "support": {
+        "email": "amauryfranssen@gmail.com"
+    },
+    "extra": {
+        "statamic": {
+            "name": "Site Field Visibility",
+            "description": "Automatically hide/show fields based on the active site in the control panel"
+        },
+        "laravel": {
+            "providers": [
+                "Amaury\\SiteFieldVisibility\\ServiceProvider"
+            ]
+        }
+    },
+    "require": {
+        "statamic/cms": "^4.0|^5.0"
+    }
+}

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c1a0c7e511ebe467211e4a7526ad0ded",
+    "content-hash": "556f57f817ab68d97827aa9bf4dd030d",
     "packages": [
         {
             "name": "ajthinking/archetype",
@@ -71,7 +71,7 @@
         },
         {
             "name": "amaury/multisitesblocs",
-            "version": "dev-main",
+            "version": "dev-feature/replicator-visibility-by-site",
             "dist": {
                 "type": "path",
                 "url": "addons/amaury/multisitesblocs",
@@ -104,6 +104,47 @@
                 "psr-4": {
                     "Amaury\\Multisitesblocs\\Tests\\": "tests"
                 }
+            },
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "amaury/site-field-visibility",
+            "version": "dev-feature/replicator-visibility-by-site",
+            "dist": {
+                "type": "path",
+                "url": "addons/amaury/site-field-visibility",
+                "reference": "c15202ad1e9c3ae0a6b1d84c9e3fd9673d1e4236"
+            },
+            "require": {
+                "statamic/cms": "^4.0|^5.0"
+            },
+            "type": "library",
+            "extra": {
+                "statamic": {
+                    "name": "Site Field Visibility",
+                    "description": "Automatically hide/show fields based on the active site in the control panel"
+                },
+                "laravel": {
+                    "providers": [
+                        "Amaury\\SiteFieldVisibility\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Amaury\\SiteFieldVisibility\\": "src/"
+                }
+            },
+            "authors": [
+                {
+                    "name": "Amaury Franssen"
+                }
+            ],
+            "description": "Hide/show fields based on active site in Statamic CP",
+            "support": {
+                "email": "amauryfranssen@gmail.com"
             },
             "transport-options": {
                 "relative": true
@@ -10984,7 +11025,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "amaury/multisitesblocs": 20
+        "amaury/multisitesblocs": 20,
+        "amaury/site-field-visibility": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
