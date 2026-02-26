@@ -1,3 +1,11 @@
+Dans mon entreprise nous nous sommes intéressé à Statamic : l'intérêt était de voir comment convaincre les clients actuellement sur WordPress de passer sur Laravel + Statamic et de voir les limites de l'approche. Un de ces clients est Marie Blachère. Comme nous n'avions pas le temps d'investir précisément les dimensions de ce client, je me suis dit que ce serait intéressant d'entamer un projet personnel en parallèle pour se demander : comment Marie Blachère pourrait tirer partie d'un multisite fait sur Laravel + Statamic qui remplacerait son actuel base de sites presque tous sur WordPress.
+
+J'ai donc dans ce cadre créé ce début de template qui est une simple ébauche. Je compte m'appuyer dessus pour réfléchir et prendre du recul sur les enjeux. Le processus est en cours et je vous en dirais plus bientôt. Cette base de code est en cours de conception.
+
+Ce projet n'a donc ni la charpente d'un vrai projet ni la documentation mais a quand même si vous fouillez dans le code, une base de multisite Statamic en place.
+
+Voici la présentation anglaise de Satamic pour les curieux (version initial si création d'un projet Statamic) :
+
 <p align="center"><img src="https://statamic.com/assets/branding/Statamic-Logo+Wordmark-Rad.svg" width="400" alt="Statamic Logo" /></p>
 
 ## About Statamic
